@@ -18,10 +18,10 @@ namespace LibrarySystem
         {
             string jsonData = File.ReadAllText(filePath);
 
-            var data = JsonSerializer.Deserialize<dynamic>(jsonData);
+            var data = JsonSerializer.Deserialize<Library>(jsonData);
 
-            books = data.Books.ToObject<List<Book>>();
-            users = data.Users.ToObject<List<User>>();
+            books = data.Books;
+            users = data.Users;
         }
     }
 }
